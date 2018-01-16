@@ -1,0 +1,106 @@
+#Movie {
+    width: 100%;
+    background: #e9e5e5;
+}
+
+#title {
+    padding-top: 40px;
+    padding-bottom: 20px;
+    text-align: center;
+    span {
+        display: inline-block;
+        &.large {
+            font-size: 30px;
+            font-weight: bolder;
+        }
+        &.middle {
+            font-size: 20px;
+        }
+    }
+}
+
+#box {
+    width: 1200px;
+    background: white;
+    border-radius: 20px;
+    margin: 0 auto;
+    .image {
+        width: 810px;
+        height: 1200px;
+        margin: 20px auto;
+        img {
+            width: 810px;
+            height: 1200px;
+        }
+    }
+    ul {
+        list-style: none;
+        li {
+            &.tag {
+                margin-left: 60px;
+            }
+        }
+        &.directors {
+            li {
+                float: left;
+                margin-top: 10px;
+                margin-right: 10px;
+            }
+        }
+        &.autor {
+            clear: both;
+            li {
+                float: left;
+                margin-right: 10px;
+                margin-top: 6px;
+            }
+        }
+        &.type {
+            clear: both;
+            li {
+                float: left;
+                margin-right: 10px;
+                margin-top: 6px;
+                margin-bottom: 6px;
+            }
+        }
+        &.wanna {
+            clear: both;
+            li {
+                float: left;
+                width: 500px;
+                border: 1px solid deepskyblue;
+                height: 40px;
+                border-radius: 5px;
+                text-align: center;
+                line-height: 40px;
+                margin-bottom: 20px;
+                margin-top: 20px;
+                &.left {
+                    margin-left: 60px;
+                }
+                &.right {
+                    float: right;
+                    margin-right: 60px;
+                }
+            }
+        }
+    }
+    h3 {
+        clear: both;
+        font-size: 18px;
+        margin-left: 60px;
+    }
+    p {
+        width: 1080px;
+        margin-left: 60px;
+        padding-bottom: 40px;
+        &.rating {
+            clear: both;
+            padding-bottom: 0;
+        }
+        meter {
+            margin-left: 16px;
+        }
+    }
+}
