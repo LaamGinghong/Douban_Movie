@@ -31,7 +31,9 @@
 				<li class="right">看过({{Movie.reviews_count}})</li>
 			</ul>
 			<h3>{{Movie.title}}的剧情介绍</h3>
-			<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{Movie.summary}}</p>
+			<p class="pcweb" id="pcweb">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{Movie.summary}}</p>
+			<p class="mobile" id="mobile">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{first_sentence}}。</p>
+			<p class="more" id="more" v-on:click="more()">更多</p>
 		</div>
 	</div>
 </template>
@@ -43,7 +45,8 @@
 		data() {
 			return {
 				Movie: {},
-				id: ''
+				id: '',
+				first_sentence: ''
 			}
 		},
 		created: function() {
@@ -55,8 +58,16 @@
 				dataType: 'jsonp',
 				success: function(data) {
 					vm.Movie = data;
+					vm.first_sentence = vm.Movie.summary.split('。')[0]
 				}
 			});
+		},
+		methods:{
+			more(){
+				$('#more').css('display','none');
+				$('#mobile').css('display','none');
+				$('#pcweb').css('display','block');
+			}
 		}
 	}
 </script>

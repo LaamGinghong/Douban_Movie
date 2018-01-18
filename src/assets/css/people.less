@@ -36,26 +36,26 @@
                 height: 192px;
             }
         }
-        &.msg{
-            p{
+        &.msg {
+            p {
                 margin-left: 150px;
                 margin-bottom: 3px;
             }
         }
-        p.people_title{
+        p.people_title {
             font-size: 20px;
             font-weight: bold;
             margin-bottom: 10px;
         }
-        &.summary{
+        &.summary {
             margin-top: 10px;
         }
-        &.photo{
+        &.photo {
             margin-top: 10px;
             height: 153px;
-            ul{
+            ul {
                 list-style: none;
-                li{
+                li {
                     width: 115px;
                     height: 115px;
                     float: left;
@@ -65,22 +65,92 @@
                 }
             }
         }
-        &.works{
+        &.works {
             margin-top: 10px;
             height: 276px;
             clear: both;
-            ul{
+            ul {
                 list-style: none;
-                li{
-                    &.film_name{
+                li {
+                    &.film_name {
                         width: 115px;
                         float: left;
                         margin-right: 20px;
-                        li{
-                            img{
+                        li {
+                            img {
                                 width: 115px;
                                 height: 172px;
                             }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width:500px) {
+    #People {
+        background: white;
+    }
+    #People_box {
+        width: 90vw;
+        border-radius: 0;
+        padding: 20px 0 0;
+    }
+    #People_message {
+        div.summary {
+            .pc_web {
+                display: none;
+            }
+            .more {
+                text-align: right;
+                text-decoration: underline;
+                &:after {
+                    width: 0;
+                    content: '';
+                    height: 0;
+                    border-style: solid;
+                    border-color: black transparent transparent transparent;
+                    border-width: 5px;
+                    position: relative;
+                    top: 13px;
+                    left: 4px;
+                }
+            }
+        }
+        div.photo {
+            height: auto;
+            ul {
+                li {
+                    margin-right: 0;
+                    margin-top: 10px;
+                    &:nth-child(odd) {
+                        margin-left: 30px;
+                    }
+                    &:nth-child(even) {
+                        float: right;
+                        margin-right: 30px;
+                    }
+                }
+            }
+        }
+        div.works {
+            height: auto;
+            p.people_title{
+                padding-top: 10px;
+            }
+            ul {
+                li {
+                    &.film_name{
+                        margin-right: 0;
+                        margin-top: 10px;
+                        &:nth-child(odd){
+                            margin-left: 30px;
+                        }
+                        &:nth-child(even){
+                            float: right;
+                            margin-right: 30px;
                         }
                     }
                 }

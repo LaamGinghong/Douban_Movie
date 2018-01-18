@@ -104,3 +104,74 @@
         }
     }
 }
+
+@media only screen and (max-width:500px) {
+    #Movie_message {
+        width: 100%;
+        border-radius: 0;
+        .image {
+            width: 215px;
+            height: 319px;
+            border: 1px solid gainsboro;
+            img {
+                width: 215px;
+                height: 319px;
+            }
+        }
+        ul {
+            &.directors {
+                li {
+                    margin-right: 4px;
+                }
+            }
+            &.autor {
+                li {
+                    margin-right: 4px;
+                }
+            }
+            &.type {
+                li {
+                    margin-right: 4px;
+                }
+            }
+            &.wanna {
+                li {
+                    width: 100px;
+                    border: none;
+                    height: 40px;
+                    color: white;
+                    background: deepskyblue;
+                }
+            }
+        }
+        p {
+            width: 70vw;
+            padding-bottom: 0;
+            &.rating {
+                clear: both;
+                padding-bottom: 0;
+            }
+            meter {
+                display: none;
+            }
+            &.pcweb{
+                display: none;
+            }
+            &.more{
+                text-align: right;
+                text-decoration: underline;
+                &:after{
+                    width: 0;
+                    content: '';
+                    height: 0;
+                    border-style: solid;
+                    border-color: black transparent transparent transparent; 
+                    border-width: 5px;
+                    position: relative;
+                    top: 13px;
+                    left: 4px;
+                }
+            }
+        }
+    }
+}
