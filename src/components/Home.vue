@@ -12,14 +12,12 @@
 			<ul>
 				<li v-for="value in Movie" class="outer">
 					<div class="image">
-						<img v-bind:src="value.images.small" v-bind:alt="value.title" class="image" />
+						<router-link :to="'/Movie/'+value.id"><img v-bind:src="value.images.small" v-bind:alt="value.title" class="image" /></router-link>
 					</div>
 					<div>
-						<router-link :to="'/Movie/'+value.id">
-							<h4>{{value.title}}</h4>
-						</router-link>
+						<h4><router-link :to="'/Movie/'+value.id">{{value.title}}</router-link></h4>
 						<ul>
-							<li v-for="val in value.casts" class="cast">{{val.name}}</li>
+							<li v-for="val in value.casts" class="cast"><router-link :to="'/People/'+val.id">{{val.name}}</router-link></li>
 						</ul>
 						<ul class="actor">
 							<li v-for="val in value.genres" class="type">{{val}}</li>

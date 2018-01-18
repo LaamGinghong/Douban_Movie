@@ -1,7 +1,7 @@
 <template>
 	<div id="Movie">
-		<div id="box">
-			<div id="title">
+		<div id="Movie_message">
+			<div id="Movie_name">
 				<span class="large">{{Movie.title}}</span>
 				<span class="middle">{{Movie.original_title}}</span>
 				<span class="middle" style="font-weight: bolder; font-size: 24px;">({{Movie.year}})</span>
@@ -11,17 +11,21 @@
 			</div>
 			<ul class="directors">
 				<li class="tag">导演：</li>
-				<li v-for="value in Movie.directors">{{value.name}}</li>
+				<li v-for="value in Movie.directors">
+					<router-link :to="'/People/'+value.id">{{value.name}}</router-link>
+				</li>
 			</ul>
 			<ul class="autor">
 				<li class="tag">主演：</li>
-				<li v-for="value in Movie.casts">{{value.name}}</li>
+				<li v-for="value in Movie.casts">
+					<router-link :to="'/People/'+value.id">{{value.name}}</router-link>
+				</li>
 			</ul>
 			<ul class="type">
 				<li class="tag">类型：</li>
 				<li v-for="value in Movie.genres">{{value}}</li>
 			</ul>
-			<p class="rating">豆瓣评分:<meter min="0" max="10" v-bind:value="Movie.rating.average"></meter>{{Movie.rating.average}}</p>
+			<p class="rating">豆瓣评分:<meter min="0" max="10" v-bind:value="Movie.rating.average"></meter>{{Movie.rating.average}}（共<b>{{Movie.ratings_count}}</b>人参与评分）</p>
 			<ul class="wanna">
 				<li class="left">想看({{Movie.wish_count}})</li>
 				<li class="right">看过({{Movie.reviews_count}})</li>
@@ -39,6 +43,7 @@
 		data() {
 			return {
 				Movie: {},
+				id: ''
 			}
 		},
 		created: function() {
