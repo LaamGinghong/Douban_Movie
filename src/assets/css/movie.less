@@ -104,7 +104,9 @@
         }
     }
 }
-#mobile,#more{
+
+#mobile,
+#more {
     display: none;
 }
 
@@ -157,18 +159,18 @@
             meter {
                 display: none;
             }
-            &.pcweb{
+            &.pcweb {
                 display: none;
             }
-            &.more{
+            &.more {
                 text-align: right;
                 text-decoration: underline;
-                &:after{
+                &:after {
                     width: 0;
                     content: '';
                     height: 0;
                     border-style: solid;
-                    border-color: black transparent transparent transparent; 
+                    border-color: black transparent transparent transparent;
                     border-width: 5px;
                     position: relative;
                     top: 13px;
@@ -176,5 +178,9 @@
                 }
             }
         }
+    }
+    #mobile,
+    #more {
+        display: block;
     }
 }

@@ -88,7 +88,9 @@
         }
     }
 }
-#mobile_web,#more1{
+
+#mobile_web,
+#more1 {
     display: none;
 }
 
@@ -140,18 +142,18 @@
         }
         div.works {
             height: auto;
-            p.people_title{
+            p.people_title {
                 padding-top: 10px;
             }
             ul {
                 li {
-                    &.film_name{
+                    &.film_name {
                         margin-right: 0;
                         margin-top: 10px;
-                        &:nth-child(odd){
+                        &:nth-child(odd) {
                             margin-left: 30px;
                         }
-                        &:nth-child(even){
+                        &:nth-child(even) {
                             float: right;
                             margin-right: 30px;
                         }
@@ -159,5 +161,9 @@
                 }
             }
         }
+    }
+    #mobile_web,
+    #more1 {
+        display: block;
     }
 }
