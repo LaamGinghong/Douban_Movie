@@ -61,6 +61,7 @@
 					vm.first_sentence = vm.Movie.summary.split('。')[0]
 				}
 			});
+			console.log(this.$route.params)
 		},
 		methods:{
 			more(){
